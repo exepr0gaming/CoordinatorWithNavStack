@@ -1,5 +1,5 @@
 //
-//  CarrotView.swift
+//  ThirdView.swift
 //  CoordinatorWithNavStack
 //
 //  Created by Admin on 11.07.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CarrotView: View {
+struct ThirdView: View {
   @EnvironmentObject private var coordinator: Coordinator
   
   var body: some View {
@@ -19,13 +19,13 @@ struct CarrotView: View {
         coordinator.popToRoot()
       }
     }
-    .navigationTitle("🥕")
+    .navigationTitle("ThirdView 🥕")
   }
 }
 #if DEBUG
-struct CarrotView_Previews: PreviewProvider {
+struct ThirdView_Previews: PreviewProvider {
     static var previews: some View {
-        CarrotView()
+        ThirdView()
     }
 }
 #endif

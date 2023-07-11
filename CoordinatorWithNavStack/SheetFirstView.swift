@@ -1,5 +1,5 @@
 //
-//  OliveView.swift
+//  SheetFirstView.swift
 //  CoordinatorWithNavStack
 //
 //  Created by Admin on 11.07.2023.
@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct OliveView: View {
+struct SheetFirstView: View {
   @EnvironmentObject private var coordinator: Coordinator
   
     var body: some View {
       List {
         Button("Dismiss") {
-          coordinator.dismissFullScreenCover()
+          coordinator.dismissSheet()
         }
       }
-      .navigationTitle("🫒")
+      .navigationTitle("SheetFirstView")
     }
 }
 #if DEBUG
-struct OliveView_Previews: PreviewProvider {
+struct SheetFirstView_Previews: PreviewProvider {
     static var previews: some View {
-        OliveView()
+        SheetFirstView()
     }
 }
 #endif

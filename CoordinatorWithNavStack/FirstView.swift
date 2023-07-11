@@ -1,5 +1,5 @@
 //
-//  AppleView.swift
+//  FirstView.swift
 //  CoordinatorWithNavStack
 //
 //  Created by Admin on 11.07.2023.
@@ -7,29 +7,29 @@
 
 import SwiftUI
 
-struct AppleView: View {
+struct FirstView: View {
   
   @EnvironmentObject private var coordinator: Coordinator
   
     var body: some View {
       List {
-        Button("Push 🍌") {
-          coordinator.push(.banana)
+        Button("Push Second 🍌") {
+          coordinator.push(.second)
         }
         Button("Present 🥕") {
-          coordinator.present(sheet: .lemon)
+          coordinator.present(sheet: .sheetFirst)
         }
         Button("Present 🍋") {
-          coordinator.present(fullScreenCover: .olive)
+          coordinator.present(fullScreenCover: .fullScreenFirst)
         }
       }
-      .navigationTitle("🍎")
+      .navigationTitle("First View 🍎")
     }
 }
 #if DEBUG
-struct AppleView_Previews: PreviewProvider {
+struct FirstView_Previews: PreviewProvider {
     static var previews: some View {
-        AppleView()
+      FirstView()
     }
 }
 #endif

@@ -1,5 +1,5 @@
 //
-//  BananaView.swift
+//  SecondView.swift
 //  CoordinatorWithNavStack
 //
 //  Created by Admin on 11.07.2023.
@@ -7,24 +7,24 @@
 
 import SwiftUI
 
-struct BananaView: View {
+struct SecondView: View {
   @EnvironmentObject private var coordinator: Coordinator
     var body: some View {
       List {
-        Button("Push 🥕") {
-          coordinator.push(.carrot)
+        Button("Push third 🥕") {
+          coordinator.push(.third)
         }
         Button("Pop") {
           coordinator.pop()
         }
       }
-      .navigationTitle("🍌")
+      .navigationTitle("SecondView 🍌")
     }
 }
 #if DEBUG
-struct BananaView_Previews: PreviewProvider {
+struct SecondView_Previews: PreviewProvider {
     static var previews: some View {
-      BananaView()
+      SecondView()
     }
 }
 #endif

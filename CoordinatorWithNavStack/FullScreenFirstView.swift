@@ -1,5 +1,5 @@
 //
-//  LemonView.swift
+//  FullScreenFirstView.swift
 //  CoordinatorWithNavStack
 //
 //  Created by Admin on 11.07.2023.
@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct LemonView: View {
+struct FullScreenFirstView: View {
   @EnvironmentObject private var coordinator: Coordinator
   
     var body: some View {
       List {
         Button("Dismiss") {
-          coordinator.dismissSheet()
+          coordinator.dismissFullScreenCover()
         }
       }
-      .navigationTitle("🍋")
+      .navigationTitle("FullScreenFirstView")
     }
 }
 #if DEBUG
-struct LemonView_Previews: PreviewProvider {
+struct FullScreenFirstView_Previews: PreviewProvider {
     static var previews: some View {
-        LemonView()
+        FullScreenFirstView()
     }
 }
 #endif

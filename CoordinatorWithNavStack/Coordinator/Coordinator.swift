@@ -8,7 +8,8 @@
 import SwiftUI
 
 enum Page: String, Identifiable {
-  case apple, banana, carrot
+  case first, second, third
+  //case apple, banana, carrot
   
   var id: String {
     self.rawValue
@@ -16,7 +17,7 @@ enum Page: String, Identifiable {
 }
 
 enum Sheet: String, Identifiable {
-  case lemon
+  case sheetFirst
   
   var id: String {
     self.rawValue
@@ -24,7 +25,7 @@ enum Sheet: String, Identifiable {
 }
 
 enum FullScreenCover: String, Identifiable {
-  case olive
+  case fullScreenFirst
   
   var id: String {
     self.rawValue
@@ -67,21 +68,21 @@ class Coordinator: ObservableObject {
   @ViewBuilder
   func build(page: Page) -> some View {
     switch page {
-    case .apple:
-      AppleView()
-    case .banana:
-      BananaView()
-    case .carrot:
-      CarrotView()
+    case .first:
+      FirstView()
+    case .second:
+      SecondView()
+    case .third:
+      ThirdView()
     }
   }
   
   @ViewBuilder
   func build(sheet: Sheet) -> some View {
     switch sheet {
-    case .lemon:
+    case .sheetFirst:
       NavigationStack { // for nav title
-        LemonView()
+        SheetFirstView()
       }
       
     }
@@ -90,9 +91,9 @@ class Coordinator: ObservableObject {
   @ViewBuilder
   func build(fullScreenCover: FullScreenCover) -> some View {
     switch fullScreenCover {
-    case .olive:
+    case .fullScreenFirst:
       NavigationStack { // for nav title
-        OliveView()
+        FullScreenFirstView()
       }
     }
   }
