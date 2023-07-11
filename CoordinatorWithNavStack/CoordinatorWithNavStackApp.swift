@@ -1,3 +1,4 @@
+
 //
 //  CoordinatorWithNavStackApp.swift
 //  CoordinatorWithNavStack
@@ -11,7 +12,7 @@ import SwiftUI
 struct CoordinatorWithNavStackApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          CoordinatorView()
         }
     }
 }

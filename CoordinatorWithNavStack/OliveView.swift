@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct OliveView: View {
+  @EnvironmentObject private var coordinator: Coordinator
+  
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      List {
+        Button("Dismiss") {
+          coordinator.dismissFullScreenCover()
+        }
+      }
+      .navigationTitle("🫒")
     }
 }
-
+#if DEBUG
 struct OliveView_Previews: PreviewProvider {
     static var previews: some View {
         OliveView()
     }
 }
+#endif

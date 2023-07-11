@@ -1,5 +1,5 @@
 //
-//  AppleView.swift
+//  BananaView.swift
 //  CoordinatorWithNavStack
 //
 //  Created by Admin on 11.07.2023.
@@ -7,18 +7,24 @@
 
 import SwiftUI
 
-struct AppleView: View {
+struct BananaView: View {
+  @EnvironmentObject private var coordinator: Coordinator
     var body: some View {
       List {
-        Button("Push 🍌") {}
-        Button("Push 🥕") {}
-        Button("Push 🍋") {}
+        Button("Push 🥕") {
+          coordinator.push(.carrot)
+        }
+        Button("Pop") {
+          coordinator.pop()
+        }
       }
+      .navigationTitle("🍌")
     }
 }
-
-struct AppleView_Previews: PreviewProvider {
+#if DEBUG
+struct BananaView_Previews: PreviewProvider {
     static var previews: some View {
-        AppleView()
+      BananaView()
     }
 }
+#endif
